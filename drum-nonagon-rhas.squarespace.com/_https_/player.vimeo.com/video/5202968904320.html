@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+  <title>400 Bad Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  body {
+    background: white;
+  }
+
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    min-width: 95vw;
+  }
+
+  main h1 {
+    font-weight: 400;
+    font-size: 4.6em;
+    color: #191919;
+    margin: 0 0 11px 0;
+  }
+
+  main p {
+    font-size: 1.4em;
+    color: #3a3a3a;
+    font-weight: 400;
+    line-height: 2em;
+    margin: 0;
+  }
+
+  main p a {
+    color: #3a3a3a;
+    text-decoration: none;
+    border-bottom: solid 1px #3a3a3a;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  #status-page {
+    display: none;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+  }
+
+  footer span {
+    margin: 0 11px;
+    font-size: 1em;
+    font-weight: 400;
+    color: #a9a9a9;
+    white-space: nowrap;
+  }
+
+  footer span strong {
+    font-weight: 400;
+    color: #191919;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>400 Bad Request</h1>
+    <p id="status-page">Please visit <a href="https://status.squarespace.com">status.squarespace.com</a> for updates</p>
+  </main>
+
+  <footer>
+    <span><strong>mpOiA8pD/gr2Ri6oJ @ Wed, 29 Jan 2025 20:01:20 GMT</strong></span>
+    <span>SECSD-219</span>
+  </footer>
+
+  <script>
+    function showStatusPage(){
+      var statusCode = 400;
+      var statusPageEl = document.getElementById('status-page');
+
+      if(!statusPageEl) { return; }
+
+      if (statusCode && statusCode >= 500 && statusCode <= 599) {
+        statusPageEl.style.display = 'block';
+      } else {
+        statusPageEl.style.display = 'none';
+      }
+    };
+    try {
+      showStatusPage();
+    } catch (error) {
+      console.log(error)
+    }
+  </script>
+</body>
+</html>
